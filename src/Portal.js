@@ -4,8 +4,8 @@ import ReactDOM from "react-dom";
 export default class Portal extends Component {
     constructor(props) {
         super(props);
-        this.state = {clicks: 0};
-    };
+        this.state = { clicks: 0 };
+    }
 
     handleClick = () => {
         console.log("handleClick in:", this);
@@ -17,7 +17,9 @@ export default class Portal extends Component {
     render() {
         return ReactDOM.createPortal(
             <div onClick={this.handleClick}>
-                <div>Portal in portal-root (clicks: {this.state.clicks})</div>
+                <div>
+                    {this.props.title} (clicks: {this.state.clicks})
+                </div>
                 <PortalChildButton />
             </div>,
             document.getElementById("portal-root")
