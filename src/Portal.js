@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 export default class Portal extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { clicks: 0 };
-    }
+    state = { clicks: 0 };
 
     handleClick = () => {
         console.log("handleClick in:", this);
